@@ -1,0 +1,78 @@
+Delivered-To: liewxiu1995@gmail.com
+Received: by 2002:a05:7208:508:b0:95:4b6f:a9b4 with SMTP id e8csp965389rbf;
+        Sat, 14 Dec 2024 22:35:01 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGYNfiwveeyKfF9BQ5QcnII6yx1QVUjrxRb9bz8UjbCJvvOPnk/kuUdmfuI+RlGq8Ch4/Ul
+X-Received: by 2002:ac8:7f8a:0:b0:467:4f0a:1b5d with SMTP id d75a77b69052e-467a5829d50mr121269521cf.42.1734244500960;
+        Sat, 14 Dec 2024 22:35:00 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1734244500; cv=none;
+        d=google.com; s=arc-20240605;
+        b=H6881EAxeBU2bX+9g9qmIPsYGl0RENbygCxn+bOki/ZSG+OnO4bhTrRxAnehi9Sm4Z
+         6wCnR+lvpln0I0zqch2bSgsbchSuUnSsChl/uDFQCsyuRntAZ67mwSzsQMkJCQNcrPOH
+         7S3qlIKz+BPZ19Lyr2C6ss2Tp3q3mCTYd+72VvfysEPSHYT9ivRD0sAWgFAmQFfE1oj/
+         YU8FR0PdLSq4WNSkP1p331Qwi9jR7bDoypnlQHBNSgtjcv6+CiP3oYhUDuurIdYnONV/
+         76EUcIKAQF61abtMavN/q2LiYgVTtl3KAt62QC3NxMm3exPJqAF4AWbVmOyxPlSC+cul
+         ZwMA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:mime-version:message-id:subject:from:to:date
+         :dkim-signature:dkim-signature;
+        bh=GDvc03eqFGFaBlkToj0ABWu9P6XXJLXOtJlPU3h4iDE=;
+        fh=5gWxDUp/kTi0OwUbUqd+ZaTjb/D2DlmKvNOTbQ6yUXk=;
+        b=e8rQ9iKcy7INrXohSoAgvVTDqjWGf6QhL73SnQyMPNbUSTow+0pIsOFeQaCapR0bZY
+         QPR/jrV1bOnTqbe3wTO87rOBcAouH8ix+AzRycyGp++1Mr27VoIrvaT1/UufrG6QCU8u
+         cgTW/ST5jUqufNf5I/oDHWiNA6TRK1YfULanKRz6AryWSZDWwTjaIfAa7uy3Up/d/Nsx
+         Y2mKTdXMwRKeHXWeDwWYzw0crhwBnYUQAoWtk2fsMfxbWi71+Boqa0wCbXQVProjlBhi
+         GXEQQbt2p4aZC1WuGLjUf4caf2EiCTbyLc3cRsT+SKCSsdcVIqQfd+iN63Dqs1YEeJY1
+         Lirg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@register.asobimo.com header.s=3hkwgesb3mnperxu4courm3adi2gonmn header.b=kqyqxySd;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Q86VLdhi;
+       spf=pass (google.com: domain of 01000193c9070436-7e36515f-3b23-4d7f-a0ea-53802dc30df8-000000@amazonses.com designates 54.240.11.127 as permitted sender) smtp.mailfrom=01000193c9070436-7e36515f-3b23-4d7f-a0ea-53802dc30df8-000000@amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=asobimo.com
+Return-Path: <01000193c9070436-7e36515f-3b23-4d7f-a0ea-53802dc30df8-000000@amazonses.com>
+Received: from a11-127.smtp-out.amazonses.com (a11-127.smtp-out.amazonses.com. [54.240.11.127])
+        by mx.google.com with ESMTPS id af79cd13be357-7b7048bf68asi379004285a.338.2024.12.14.22.35.00
+        for <liewxiu1995@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 14 Dec 2024 22:35:00 -0800 (PST)
+Received-SPF: pass (google.com: domain of 01000193c9070436-7e36515f-3b23-4d7f-a0ea-53802dc30df8-000000@amazonses.com designates 54.240.11.127 as permitted sender) client-ip=54.240.11.127;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@register.asobimo.com header.s=3hkwgesb3mnperxu4courm3adi2gonmn header.b=kqyqxySd;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Q86VLdhi;
+       spf=pass (google.com: domain of 01000193c9070436-7e36515f-3b23-4d7f-a0ea-53802dc30df8-000000@amazonses.com designates 54.240.11.127 as permitted sender) smtp.mailfrom=01000193c9070436-7e36515f-3b23-4d7f-a0ea-53802dc30df8-000000@amazonses.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=asobimo.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=3hkwgesb3mnperxu4courm3adi2gonmn; d=register.asobimo.com; t=1734244500; h=Date:To:From:Subject:Message-ID:MIME-Version:Content-Type; bh=GDvc03eqFGFaBlkToj0ABWu9P6XXJLXOtJlPU3h4iDE=; b=kqyqxySdzkBpbUTJRSRASANnvkKRYCpxx01hjdx8u+NeDeF2Xu6V4JxEljsiMOZv 3Dam5utPy1gGGLMkZOQ1TFrAskNWCS+lLQX6sNTMpcLpneq63bzoB935cuGTRknk/9w 0Ibb076RHGP7xTVBBA3/3NGZvlE6NeWACO2Yd4L2swQU5iY/+JmAM4tpMw3wfpts3/g xyiYejlsBTVred8euHD+qgFQWYU24ShhBXiLOvigjuny2tnYsPGVy5mQN3L9Nlrtpo8 /cUsiyN5sKci7NLh2v/fmsyKBV25cTVD2ZC/91qYcdKxoicNio3YsRpoIhSaqN0m1fM zT1sidiqdA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1734244500; h=Date:To:From:Subject:Message-ID:MIME-Version:Content-Type:Feedback-ID; bh=GDvc03eqFGFaBlkToj0ABWu9P6XXJLXOtJlPU3h4iDE=; b=Q86VLdhig4b8UA1XdjtwNHXRUlJ/peLtzKrOUlAguTC3F+ZgsneommV9KuUEqeYI QHnrExnnlj8RKYV0d5mUUA0r8q5ubm97q8yOFBmEgch5bZkquZNweiqpt+rn7ASqX9r qcAEdqqF0Zee1Ngnnsfe6qbwGjwRj7/RPDhPwOEA=
+Date: Sun, 15 Dec 2024 06:35:00 +0000
+To: liewxiu1995@gmail.com
+From: "Asobimo, Inc." <registration@register.asobimo.com>
+Subject: Suspicious Login Detected (Asobimo, Inc.)
+Message-ID: <01000193c9070436-7e36515f-3b23-4d7f-a0ea-53802dc30df8-000000@email.amazonses.com>
+X-Mailer: asobimo-x-mailer
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Feedback-ID: ::1.us-east-1.MNfQfbssFBUAx+Q8rCKgfWG88oY+Ys/wkEK4xpQatIw=:AmazonSES
+X-SES-Outgoing: 2024.12.15-54.240.11.127
+
+We have detected that your Asobimo account has been logged into from a different device than the one you have used previously.
+
+Account：liewxiu1995@gmail.com
+Time and Date：Around 2024-12-15 15:34:58 (JST/GMT+9)
+Device：dalvik/2.1.0 (linux; u; android 13; m2101k6g build/tkq1.221013.002)
+※Device information is not the name of the model
+
+The login above was successful.
+
+▼If this was not done by you
+Please change the password for your Asobimo account immediately to protect your account.
+
+▼If this was done by you
+Please ignore this message.
+If it expires, this email will not be sent if you log in from the above device from now on, since it will be recorded as an approved device.
+
+Expiration：Until {2024-12-16 15:34:58 (JST/GMT+9)}
+
+━━━━━━━━━━━
+Asobimo Inc.
+https://asobimo.com/
+━━━━━━━━━━━

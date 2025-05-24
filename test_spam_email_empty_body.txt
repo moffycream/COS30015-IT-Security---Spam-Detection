@@ -1,0 +1,83 @@
+Delivered-To: brimtops@gmail.com
+Received: by 2002:a05:7300:b919:b0:166:88cf:35e2 with SMTP id dw25csp1984582dyb;
+        Tue, 20 May 2025 06:34:02 -0700 (PDT)
+X-Received: by 2002:a17:902:f551:b0:227:eb61:34b8 with SMTP id d9443c01a7336-231de31b3e6mr245565925ad.25.1747748042331;
+        Tue, 20 May 2025 06:34:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1747748042; cv=none;
+        d=google.com; s=arc-20240605;
+        b=asvAe6JOSqc3+t/oyJUHx41xuiRld0x8cTg9PkgIkEMensyGL+/Ip2ObHPHzJVPPvP
+         Gu3TibvARRqYEoaoJkq+nl2wmJ4yN/tndDbDxIyxbKls0T/fMclICl6Kw9kM6OIhH1y+
+         pDOk1rG/DM11v2KoU2WvVva5XjCN2xQaLeIpsESHHpQUzau4ccYxfS32MMwGPdeBgxIk
+         fixJ/4sz2GgH73/hWxH06ofB2dPux4YpDTZJWMvndiRMwO5wFr2RhMV9/NQAVkv3oFqb
+         ch0OiD8VgkwhGbpQH6sqW+fhvfrEf14Qx7jNr+lb0WzDHMarJAcSkVULpFoAA14XsQLV
+         +pMQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=content-transfer-encoding:date:mime-version:message-id:subject:to
+         :from:dkim-signature;
+        bh=ck7LFvD6fsOPvas0JlzVJkuysRWjmW5MqoJ9YtzQypo=;
+        fh=SlOL7OLhUhkU7q919CbXmMf3/w/MJCXRj0sSDqzfbgI=;
+        b=hVMy8oQE0irPtjewgKcDPf3ET8s+i+J78y5liB/kCfbponlDQq0gcUokSludeTA8r/
+         8gQVuEpIlm93c9Dgkt8MsksjDkFoanzQrkHngnVEaEg3koEwugjxiifxbbu8zyzJCXZJ
+         xEmNVcoLnD9G6bQ3K4EmsocVSV9Ja+WohzVjow7PX3UXfjHFpyPgI2YzDc2vmrxnVGBy
+         S8B4FANBznB9R416YIhw+c4fhFpKmlwR4klurGdnlDA+JESZHxHis6I4iypW+/EMtmRJ
+         VEwYvEmeQYu+aMiVtjHYozUlhKyRWyp0OnyAo3Ghg2dTeabzWcgEkmgAIzqCyEgDY6Lc
+         BNEA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=k8rNZ6g6;
+       spf=pass (google.com: domain of swe40001fypgroup8@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=swe40001fypgroup8@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <swe40001fypgroup8@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d9443c01a7336-231d4eeb281sor56782625ad.17.2025.05.20.06.34.02
+        for <brimtops@gmail.com>
+        (Google Transport Security);
+        Tue, 20 May 2025 06:34:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of swe40001fypgroup8@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=k8rNZ6g6;
+       spf=pass (google.com: domain of swe40001fypgroup8@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=swe40001fypgroup8@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1747748042; x=1748352842; dara=google.com;
+        h=content-transfer-encoding:date:mime-version:message-id:subject:to
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=ck7LFvD6fsOPvas0JlzVJkuysRWjmW5MqoJ9YtzQypo=;
+        b=k8rNZ6g6kQO5FHaq0uhJQKeNQOHccCkCc9J3Y8Y1BRF6OxFAzuFY6Yah1WS1T9+C/w
+         M8Uhg/xODSYEnj6UVmE8SRR48UluhstgoYlVkvAfqpAs4DHX0RqJmgGhesGZHETkkbD/
+         xwbFO4YgMLbc5JpTdnLV6GCb8jBbbdHiofCiJp4iSkNc4pXkWI6tzBEl8i9MVR/oo0o8
+         XGI1Lo87SpwTTZB3u8OtaggHrYdqlRAv0UMLICcGqGgRHwpRC3LvTXVXCVq2AEB4iDMu
+         InvC5G8ziZXuQmZRHv4Wfhm9zACXLpS9D8h2+FkvOM3eQ95I+8lxQAOKf8pS+CvZt9Zg
+         3cHQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1747748042; x=1748352842;
+        h=content-transfer-encoding:date:mime-version:message-id:subject:to
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=ck7LFvD6fsOPvas0JlzVJkuysRWjmW5MqoJ9YtzQypo=;
+        b=cRCEhain51jIt9IfRjClu8iEzfesK/QlsCdgi/c5ACiUHxrZJlo2216v8d3DVBfSXm
+         VaIz5U9BFdE9YBxe+fosx3ukhNR5p1yfZkxKnfBT+9cCgmDK82TtD0sTEn833TJK7J0E
+         M7+2NoJHBJcK7Oa4x47zKdDs6njaBooHzbK9P4C5dlgNDeAtH6EOsLxpbBfkaPHOcJjW
+         BYz02pPoFSYuZmBKP+hQ66AjwLgJYcobzq1vAPB6IFFlmnKAmbS2IiMvUNmIxGCwmZPG
+         3RiZ89r2bojECE8thMFJPjG4v+T0/G6MeSAyrGTG0ZXiLGa2NFejftdsag1r37JzGAq8
+         U8FQ==
+X-Gm-Message-State: AOJu0Yy0NjOu5wGjdaPX28pSc1ie22G26l6amm6p2pkEyD3wNsCEXCd7 JxFQYlBcuvl4xdnscLb4nBBLyQ/iHkrB3C8rmdDdaCfQOSbe+KyKiL90ShgMmQ==
+X-Gm-Gg: ASbGncvxfYT4HfRdyjxB/zxH3gVpFhJBxfDxSOgCxwSmYdpb7ViMfmmdz4/LqRbaEcT rNN8mOatW74d0i1C1hRaSqL0azudnF2F4wlzKX6j5dZnyduGu3pYdawj1xGr1CCZR04BDhWNqzQ Ol/ECUsPVAxNd42AexM/ZxrJYp96xS6Ff7lXLCELgCdqEEuSVqvlpcnKBzwC2gKgl5M03NuvXH7 d5FkYpPHo4xRDoHhGzMms4fbhkRFX1w1MIPjpmZcu1PrchLMghcL6kp4W5U7e/zDGBrvMjL32t/ 161bmUePGth36YnoQGDIoP9YZD9Rp4WaTz94HNOqBxdeM01F9UZPgmUk9BGIMVfUGlf7Wn0KzL2 wvD2R1Q6qQA==
+X-Google-Smtp-Source: AGHT+IEYjS6wRNXtijhXrSFOJRpvpaOVeU+1A1uP6sCTfqRztYb0KiGohp6fKY4SKL7D7A5//ULoIw==
+X-Received: by 2002:a17:902:dac5:b0:22e:69ee:b286 with SMTP id d9443c01a7336-231de37012fmr215102325ad.33.1747748041556;
+        Tue, 20 May 2025 06:34:01 -0700 (PDT)
+Return-Path: <swe40001fypgroup8@gmail.com>
+Received: from localhost ([183.171.249.180])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-231d4ac95cbsm76474875ad.45.2025.05.20.06.34.00
+        for <brimtops@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Tue, 20 May 2025 06:34:01 -0700 (PDT)
+From: "${APP_NAME}" <swe40001fypgroup8@gmail.com>
+To: brimtops@gmail.com
+Subject: Your Ticket has been Created
+Message-ID: <260ad2d3289adfd5cbf254d94da289cf@gmail.com>
+MIME-Version: 1.0
+Date: Tue, 20 May 2025 21:34:01 +0800
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
